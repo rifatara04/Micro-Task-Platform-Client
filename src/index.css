@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #0ea5e9;
+  --color-secondary: #d946ef;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Theme MUST come after imports */
+@theme {
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  --color-secondary-50: #fdf4ff;
+  --color-secondary-100: #fae8ff;
+  --color-secondary-200: #f5d0fe;
+  --color-secondary-300: #f0abfc;
+  --color-secondary-400: #e879f9;
+  --color-secondary-500: #d946ef;
+  --color-secondary-600: #c026d3;
+  --color-secondary-700: #a21caf;
+  --color-secondary-800: #86198f;
+  --color-secondary-900: #701a75;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+@custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow;
+  }
+
+  .mesh-bg {
+    background-color: hsla(0, 100%, 50%, 0.1);
+    background-image: 
+      radial-gradient(at 40% 20%, hsla(250,100%,94%,1) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(189,100%,96%,1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(341,100%,96%,1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsla(263,100%,95%,1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(22,100%,93%,1) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, hsla(242,100%,98%,1) 0px, transparent 50%),
+      radial-gradient(at 0% 0%, hsla(343,100%,96%,1) 0px, transparent 50%);
+  }
+
+  .mesh-purple {
+    background-color: #f3e8ff;
+    background-image: 
+        radial-gradient(at 47% 33%, hsla(268,77%,87%,1) 0px, transparent 50%),
+        radial-gradient(at 82% 65%, hsla(224,75%,92%,1) 0px, transparent 50%);
+  }
+
+  .mesh-blue {
+    background-color: #e0f2fe;
+    background-image: 
+        radial-gradient(at 47% 33%, hsla(202,88%,85%,1) 0px, transparent 50%),
+        radial-gradient(at 82% 65%, hsla(202,80%,92%,1) 0px, transparent 50%);
+  }
+
+  .mesh-green {
+    background-color: #dcfce7;
+    background-image: 
+        radial-gradient(at 47% 33%, hsla(140,78%,88%,1) 0px, transparent 50%),
+        radial-gradient(at 82% 65%, hsla(168,76%,91%,1) 0px, transparent 50%);
+  }
+
+  .mesh-orange {
+    background-color: #ffedd5;
+    background-image: 
+        radial-gradient(at 47% 33%, hsla(29,91%,90%,1) 0px, transparent 50%),
+        radial-gradient(at 82% 65%, hsla(41,84%,87%,1) 0px, transparent 50%);
+  }
+}
